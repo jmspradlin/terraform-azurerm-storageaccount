@@ -3,7 +3,7 @@ data "azurerm_resource_group" "this" {
 }
 
 resource "azurerm_storage_account" "this" {
-  name                     = lower("${var.env}-${var.sa_name}")
+  name                     = lower("${var.env}${var.sa_name}")
   resource_group_name      = data.azurerm_resource_group.this.name
   location                 = data.azurerm_resource_group.this.location
   account_tier             = var.account_tier
