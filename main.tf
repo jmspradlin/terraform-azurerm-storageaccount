@@ -1,5 +1,5 @@
-data azurerm_resource_group this {
-    name = var.rg_name
+data "azurerm_resource_group" "this" {
+  name = var.rg_name
 }
 
 resource "azurerm_storage_account" "this" {
@@ -11,10 +11,10 @@ resource "azurerm_storage_account" "this" {
 }
 
 resource "azurerm_storage_account_network_rules" "this" {
-  for_each = var.network_rules
+  for_each           = var.network_rules
   storage_account_id = azurerm_storage_account.this.id
 
-  default_action             = each.value.action
-  ip_rules                   = each.value.rules
-  bypass                     = ["Metrics","Logging"]
+  default_action = each.value.action
+  ip_rules       = each.value.rules
+  bypass         = ["Metrics", "Logging"]
 }
