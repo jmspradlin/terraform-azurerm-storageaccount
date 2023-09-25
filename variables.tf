@@ -26,7 +26,7 @@ variable account_replication_type {
 variable network_rules {
   type = map
   default = {
-    basicloopback {
+    basicloopback = {
       action = "Allow"
       rules = ["127.0.0.1"]
     }
