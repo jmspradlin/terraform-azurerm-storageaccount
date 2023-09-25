@@ -18,9 +18,21 @@ variable "account_tier" {
   default     = "Standard"
   description = "Defines the Tier to use for this storage account."
 }
+variable "account_kind" {
+  default = "StorageV2"
+}
+variable "access_tier" {
+  type    = string
+  default = "Hot"
+}
+
 variable "account_replication_type" {
   type        = string
   default     = "LRS"
   description = "Defines the type of replication to use for this storage account. Valid options are LRS, GRS, RAGRS, ZRS, GZRS and RAGZRS"
 }
-variable "network_rules" {}
+variable "network_rule_default_action" {
+  default = "Allow"
+}
+variable "network_rule_ip_rules" {}
+
