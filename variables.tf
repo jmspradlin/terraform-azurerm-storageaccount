@@ -23,6 +23,4 @@ variable account_replication_type {
   default     = "LRS"
   description = "Defines the type of replication to use for this storage account. Valid options are LRS, GRS, RAGRS, ZRS, GZRS and RAGZRS"
 }
-variable network_rules {
-  type = map
-}
+variable network_rules {}
