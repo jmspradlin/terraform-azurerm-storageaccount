@@ -1,5 +1,5 @@
 data azurerm_resource_group this {
-    name = "${var.env}-${var.rg_name}"
+    name = var.rg_name
 }
 
 resource "azurerm_storage_account" "this" {
